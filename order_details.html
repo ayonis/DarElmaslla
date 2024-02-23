@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Order Details</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/prettyPhoto.css" rel="stylesheet">      
+	<link href="css/main.css" rel="stylesheet">
+	 <link href="css/responsive.css" rel="stylesheet">
+	 <script src="js/jquery.js"></script>
+    <link href="css/style.css" rel="stylesheet">
+	 <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    
+	<script>
+		var table_id ="";
+		var number_of_btns=1;
+		function showForm(t_id)
+		{
+			 table_id = "#table_form_id"+t_id;
+			
+			$("#design_inputs").show();
+			$(".table_forms").hide();
+			$(table_id).show();
+
+
+		}
+
+
+		function removeDefaultEventsFromBtns()
+		{
+			$('form button').on("click",function(e){
+  		  e.preventDefault();
+			});
+			
+
+		}
+
+
+		function create_sheets()
+		{
+			var x = document.getElementById("number_of_forms_txt").value;
+			 design_in_sheet = document.getElementById("forms_id");
+			 number_of_btns = x;
+			for(i = 1 ; i <= x ; i++)
+			{
+				
+				design_in_sheet.innerHTML+='<table id="table_form_id'+i+'" class="table_forms col-md-12" border="1"><tr><td  class="col-md-2">أسم العميل</td><td colspan="3"><label class="form-control" name="client_name_f'+i+'">على سيد محمود</label></td><td>كود العميل</td><td><label class="form-control" name="client_code_label_f'+i+'">2</label></td><td rowspan="2" colspan="2"><img src="images/logo.png" class="col-md-12"/></td></tr> <tr><td class="col-md-2">مكان المغسلة</td><td colspan="5"><label class="form-control" name="place_label_f'+i+'">شارع محمود رشوان</label></td></tr><tr><td class="col-md-2">نموذج</td><td colspan="5"><label class="form-control" name="model_num_label_f'+i+'">no 70</label></td><td class="text-center col-md-1">الكمية</td><td class="text-center col-md-1">التكلفة</td></tr><tr><td class="col-md-2">كاونتر</td><td  colspan="3"><input type="text" class="form-control text-center" name="counter_type_input_f'+i+'"/></td><td class="text-center col-md-1">قياس</td><td><input type="text" class="form-control text-center" name="counter_size_input_f'+i+'"/></td><td><input type="text" class="form-control text-center" name="counter_quantity_input_f'+i+'"/></td><td><input type="text" class="form-control text-center" name="counter_price_f'+i+'"/></td></tr><tr><td class="col-md-2">حوض</td><td  colspan="3"><input type="text" class="form-control text-center" name="basin_type_input_f'+i+'"/></td><td class="text-center col-md-1">اللون</td><td><input type="text" class="form-control text-center" name="basin_color_input_f'+i+'"/></td><td><input type="text" class="form-control text-center" name="basin_quantity_input'+i+'"/></td><td><input type="text" class="form-control text-center" name="basin_price_input_f'+i+'"/></td></tr><tr><td class="col-md-2">مرأة</td><td><input colspan="2" type="text" class=" form-control text-center" name="mirror_type_input_f'+i+'"/></td><td class="text-center col-md-1">القياس</td><td><input type="text" class="form-control text-center" name="mirror_size_input_f'+i+'"/></td><td class="text-center col-md-1">اللون</td><td><input type="text" class="form-control text-center" name="mirror_color_input_f'+i+'"/></td><td><input type="text" class="form-control text-center" name="mirror_quantity_input_f'+i+'"/></td><td><input type="text" class="form-control text-center" name="mirror_price_input_f'+i+'"/></td></tr><tr><td class="col-md-2">موزايك</td><td colspan="5"><input type="text" class=" form-control text-center" name="mosaic_type_input_f'+i+'"/></td><td><input type="text" class="form-control text-center" name="mosaic_quantity_input_f'+i+'"/></td><td><input type="text" class="form-control text-center" name="mosaic_price_input_f'+i+'"/></td></tr><tr><td class="col-md-2">خلفية جدار</td><td colspan="5"><input type="text" class=" form-control text-center" name="wall_type_input_f'+i+'"/></td><td><input type="text" class="form-control text-center" name="wall_quantity_input_f'+i+'"/></td><td><input type="text" class="form-control text-center" name="wall_price_input_f'+i+'"/></td></tr><tr><td class="col-md-2">ديكور زجاج</td><td colspan="5"><input type="text" class=" form-control text-center" name="glass_type_input_f'+i+'" /></td><td><input type="text" class="form-control text-center" name="glass_quantity_input_f'+i+'"/></td><td><input type="text" class="form-control text-center" name="glass_price_input_f'+i+'"/></td></tr> <tr><td class="col-md-2">ديكور خشب</td><td colspan="5"><input type="text" class=" form-control text-center" name="wood_design_input_f'+i+'" /></td><td><input type="text" class="form-control text-center" name="wood_design_quantity_input_f'+i+'"/></td><td><input type="text" class="form-control text-center" name="wood_design_price_input_f'+i+'"/></td></tr><tr><td class="col-md-2">خلاط</td><td colspan="5"><input type="text" class=" form-control text-center" name="faucet_input_f'+i+'" /></td><td><input type="text" class="form-control text-center" name="faucet_quantity_input_f'+i+'"/></td><td><input type="text" class="form-control text-center" name="faucet_price_input_f'+i+'"/></td></tr><tr><td class="col-md-2">مراب حوض</td><td colspan="5"><input type="text" class=" form-control text-center" name="stopper_input_f'+i+'" /></td><td><input type="text" class="form-control text-center" name="stopper_quantity_input_f'+i+'"/></td><td><input type="text" class="form-control text-center" name="stopper_price_input_f'+i+'"/></td></tr><tr><td class="col-md-2">إكسسوار</td><td colspan="5"><input type="text" class=" form-control text-center" name="accessories_input_f'+i+'" /></td><td><input type="text" class="form-control text-center" name="accessories_quantity_input_f'+i+'"/></td><td><input type="text" class="form-control text-center" name="accessories_price_input_f'+i+'"/></td></tr><tr><td class="col-md-2">أخرى</td><td colspan="5"><input type="text" class=" form-control text-center" name="other_input_f'+i+'" /></td><td><input type="text" class="form-control text-center" name="other_quantity_input_f'+i+'"/></td><td><input type="text" class="form-control text-center" name="other_price_input_f'+i+'"/></td></tr><tr><td class="col-md-2">ملاحظات</td><td colspan="4"><textarea class=" form-control text-center" name="notes_input_f'+i+'">  </textarea></td><td class="text-center">الاجمالى</td><td><label class="form-control text-center" name="total_quantity_label_f'+i+'"></label></td><td><label class="form-control text-center" name="total_price_label_f'+i+'"><label></td></tr><tr><td class="col-md-2">التاريخ</td><td colspan="7"> <label class="form-control text-center" name="date_label_f'+i+'">20/03/2019</label> </td></tr></table>';
+					
+				
+					
+			}
+				for(i = 1 ; i <= x;i++)
+				{
+						design_in_sheet.innerHTML += "<button onclick='showForm("+i+");' class='col-md-1 btn btn-primary btn-lg' id='"+i+"'>"+i+"</button>";
+				}
+
+				design_in_sheet.innerHTML += "<input type='submit' class='col-md-1 btn btn-primary btn-lg' id='"+i+"' name='submit_forms_draft' value='submit'/>";
+
+
+			$("#design_inputs").show();
+			$(".table_forms").hide();
+			$("#table_form_id1").show();
+
+			removeDefaultEventsFromBtns();
+
+			return false;
+
+		}
+////////////////////////////////////////////////////////////////////////////////////////
+		$(document).ready(function(){
+			$("#design_inputs").hide();
+            $("#no_of_forms").hide();
+            $("#design_form_separator").hide();
+			$("#final_check_btn").click(function(){
+				$("#no_of_forms").fadeIn(500);
+				$("#design_form_separator").show();
+											});
+            $("#number_of_forms_btn").click(function(){ 
+				create_sheets();
+              
+											});
+											});
+	</script>
+	
+  </head>
+  <body class="homepage">   
+	<header id="header">
+        <nav class="navbar navbar-fixed-top" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><img class="col-md-9" src="images/logo.png" /></a>
+                </div>
+				
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                       
+                        <li><a href="index.html">تسجيل خروج</a></li>
+                        <li><a >إضافة موظف</a></li>
+                        <li><a href="Add_new_client.html">إضافة عميل</a></li>                       
+                        <li><a href="home.html">الرئيسية</a></li> 
+                        <li class="active"><a >تواصل معنا</a></li>                        
+                    </ul>
+                </div>
+            </div><!--/.container-->
+        </nav><!--/nav-->
+		
+    </header><!--/header-->
+		
+	<section id="contact-page">
+        <div class="container">
+            <div class="center">        
+                <h2>.</h2>
+                <p class=""></p>
+            </div> 
+
+            <div class="row contact-wrap"> 
+                <div class="status alert alert-success" style="display: none"></div>
+                
+                <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="#">
+                	
+					<div class="form-group col-sm-12  text-center">
+                            <label><h2> تفاصيل الطلب  </h2></label> 
+               		</div>
+                    <div class="col-sm-7 col-sm-offset-4 text-right">
+                    	<div class="form-group text-right">
+                            <label> : رقم الطلب</label>
+                            <input type="text" class="form-control text-right" name="order_no" value="2" disabled=disabled />
+							
+                        </div>
+                        <div class="form-group ">
+                            <label>: إسم العميل </label>
+                            <input type="text" class="form-control text-right order_details_person_info" name="client_name" value ="على سيد إبراهيم" disabled="disabled" />
+                        </div>
+                        <div class="form-group">
+                            <label>: عنوان العميل</label>
+                             <input class="form-control text-right" name="client_address" value="شارع المساحة - الدقى - الجيزة" disabled="disabled" />
+                        </div>
+                         <div class="form-group text-right">
+                            <label> : تليفون العميل</label>
+                            <input type="text" class="form-control text-right" name="client_phone" value="01011236698" disabled="disabled" />
+                        </div>
+						
+						<div class="form-group text-right">
+							<input type="submit" class="btn btn-primary btn-lg text-right" name="update_client_btn" value="حفظ البيانات" />
+                            <input type="submit" class="btn btn-primary btn-lg text-right" name="delete_client_btn" value="حذف عميل" />
+							<input type="button" class="btn btn-primary btn-lg text-right" name="update_client_btn" value="تعديل بيانات عميل" />
+
+                        </div>
+						               
+                    </div>
+                   
+                    <div class="col-md-10 col-sm-offset-1 separators"> </div>
+
+                    <div class="form-group col-sm-12  text-center">
+                        <label><h2> تفاصيل المعاينة  </h2></label>
+               		 </div>
+
+					<div class="col-sm-7 col-sm-offset-4 text-right">
+                    	<div class="form-group text-right">
+                            <label> : مسؤل المعاينة</label>
+                            <select  dir="rtl"  type="text" class="form-control" name="measur_worker" value="2" disabled=disabled >
+                            	<option value="2">محمود سيد محمد</option>
+                            	<option value="1"> مصطفى على</option>
+                            </select>
+							
+                        </div>
+                        <div class="form-group ">
+                            <label>: تاريخ الزيارة </label>
+                            <input type="text" class="form-control text-right" name="visite_date" value ="10/02/2019" disabled="disabled" />
+                        </div>
+                  
+
+                         <div class="form-group ">
+                            <label>: ملاحظات اخرى</label>
+                            <input type="text" class="form-control text-right" name="other"  />
+                         </div>
+						 
+                         <div class="form-group ">
+                            <label class="col-md-12">: تحميل ملف المعاينة</label>
+                            <div class="col-md-12">
+								<button  class="btn btn-primary btn-lg">download </button>
+							</div>
+                         </div>
+						 
+						<div class="form-group text-right">
+							<input type="submit" class="btn btn-primary btn-lg text-right" name="download" value="حفظ التعديلات" />
+							<button class="btn btn-primary btn-lg" name="update_client_btn">تعديل بيانات المعاينة </button>
+						</div>
+						       
+                    </div>
+					
+					<div class="text-left col-md-12 col-md-offset-1">
+						<button id="final_check_btn" class="btn btn-primary btn-lg">تحديد عدد مسودات التصميم </button>
+					</div>
+
+
+                </form> 
+				
+                <div class="col-md-10 col-sm-offset-1 separators"> </div>
+                
+                
+                   <div class="col-md-8 text-right col-sm-offset-3" id="no_of_forms">
+	                    <div class="col-md-4 text-right">
+	                    	 <button class="btn btn-primary btn-lg" id="number_of_forms_btn"> تأكيد</button>
+	                    </div>
+	                    <div style="margin-top: 10px;" class="col-md-4">
+	                     	<input type="number" id="number_of_forms_txt" name="number_of_forms"  class="form-control text-center"/>
+	                     </div>
+	                    <div style="margin-top: 13px;" class="col-md-4 text-right">	
+	                   		<label >أدخل عدد مسودات التصميم المطلوبة</label>
+	                   	</div>
+
+                  </div>
+                 
+				<form name="draft_form" method="post" action="#" class="col-md-12">
+               		 <div id="design_inputs" class="col-md-12">
+				
+						<div class="col-md-10 col-sm-offset-1 separators"> </div>					
+						
+						<div class="form-group col-sm-12  text-center">
+                            <label><h2> مسودة تصميم</h2></label>
+						</div>
+						
+						<div class="col-md-12" id="forms_id">
+							
+						</div>
+						
+
+				  
+					</div>
+				</form>
+
+
+				
+
+				<form name="design_form" method="get" action="#" class="col-md-12">
+					<div class="col-md-10 col-sm-offset-1 separators" id="design_form_separator"> </div>
+                    <div class="form-group col-sm-12  text-center">
+                        <label><h2> تفاصيل التصميم </h2></label>
+               		 </div>
+
+					<div class="col-sm-7 col-sm-offset-4 text-right">
+                    	<div class="form-group text-right">
+                            <label> : مسؤل التصميم</label>
+                            <select  dir="rtl"  type="text" class="form-control" name="measur_worker" value="2" >
+                            	<option value="2">إختر المصم ...</option>
+                            	<option value="2">محمود سيد محمد</option>
+                            	<option value="1"> مصطفى على</option>
+                            </select>
+							
+                        </div>
+                        <div class="form-group ">
+                            <label>: تاريخ رفع التصميم </label>
+                            <input type="text" class="form-control text-right" name="visite_date" value ="--/--/----" disabled="disabled" />
+                        </div>
+                  
+
+                         <div class="form-group ">
+                            <label>: ملاحظات اخرى</label>
+                            <input type="text" class="form-control text-right" name="other"  />
+                         </div>
+						 
+                         <div class="form-group ">
+                            <label class="col-md-12">: تحميل ملف التصميم</label>
+                            <div class="col-md-12">
+								<button  class="btn btn-primary btn-lg" disabled="disabled">download </button>
+							</div>
+                         </div>
+						 
+						<div class="form-group text-right">
+							<input type="submit" class="btn btn-primary btn-lg text-right" name="download" value="حفظ التعديلات" />
+							<button class="btn btn-primary btn-lg" name="update_client_btn">تعديل بيانات التصميم </button>
+						</div>
+						       
+                    </div>
+					
+					<div class="text-left col-md-12 col-md-offset-1">
+						<button id="final_check_btn" class="btn btn-primary btn-lg">تاكيد تصميم نهائية </button>
+					</div>
+				</form>
+            </div><!--/.row-->
+        </div><!--/.container-->
+    </section><!--/#contact-page-->
+	
+ 
+
+	<footer id="footer" class="midnight-blue">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    &copy; 2019 <a target="_blank" href="http://bootstraptaste.com/" title="Free Twitter Bootstrap WordPress Themes and HTML templates"></a>. All Rights Reserved.
+                </div>
+                <!-- 
+                    All links in the footer should remain intact. 
+                    Licenseing information is available at: http://bootstraptaste.com/license/
+                    You can buy this theme without footer links online at: http://bootstraptaste.com/buy/?theme=Gp
+                -->
+                <div class="col-sm-6">
+                    <ul class="pull-right">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Faq</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
+	
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/jquery.isotope.min.js"></script>   
+    <script src="js/wow.min.js"></script>
+	<script src="js/main.js"></script>
+  </body>
+</html>
