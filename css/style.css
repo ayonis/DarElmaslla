@@ -1,0 +1,33 @@
+.prog_bar_style
+{
+	background-color: red;
+
+}
+
+.btn1{
+	height: 25px;
+	padding:3px;
+	background-color:#65A3CD;
+	color:#fff;
+	font-weight:bold;
+}
+
+.report_caption{
+	font-size: 20px;
+	background-color: #DCF8C6;
+	height: 25px;
+}
+.body_section
+{
+	margin-top:20px;
+	
+}
+.no_of_forms
+{
+    border-radius: 12px;
+}
+
+.separators{
+border-bottom:1px solid #A0A0A0;
+margin-top: 15px;
+}
